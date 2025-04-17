@@ -1,0 +1,48 @@
+<div class="container mt-4">
+  <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+    {{ errorMessage }}
+  </div>
+  
+  <h2>Edit user</h2>
+
+  <form (ngSubmit)="save()">
+    <div class="mb-3">
+      <label class="form-label">Full Name</label>
+      <input
+        [(ngModel)]="user.full_name"
+        name="full_name"
+        class="form-control"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Username</label>
+      <input
+        [(ngModel)]="user.username"
+        name="username"
+        class="form-control"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input
+        [(ngModel)]="user.email"
+        name="email"
+        class="form-control"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input
+        type="password"
+        [(ngModel)]="user.password"
+        name="password"
+        class="form-control"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Edit</button>
+  </form>
+</div>
