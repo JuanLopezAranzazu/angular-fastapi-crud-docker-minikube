@@ -16,13 +16,9 @@ app = FastAPI(
   openapi_tags=tags_metadata,
 )
 
-origins = [
-  "http://localhost:4200"
-]
-
 app.add_middleware(
   CORSMiddleware,
-  allow_origins=origins,
+  allow_origins=["*"],
   allow_credentials=True,
   allow_methods=["*"],
   allow_headers=["*"],
